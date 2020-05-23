@@ -1,6 +1,6 @@
 {
-    "name": "leafcutter/theme-template",
-    "description": "Leafcutter theme project template.",
+    "name": "leafcutter/theme-hljs",
+    "description": "Theme bundle providing bundles for both JS and CSS to support using highlight.js",
     "authors": [
         {
             "name": "Joby Elliott",
@@ -8,5 +8,8 @@
         }
     ],
     "license": "MIT",
-    "type": "leafcutter-theme"
+    "type": "leafcutter-theme",
+    "require": {
+        "leafcutter/theme-core": "*"
+    }
 }

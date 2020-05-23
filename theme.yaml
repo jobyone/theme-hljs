@@ -1,61 +1,383 @@
-# Add all the CSS files to be included automatically when
-# this theme is activated. Note that for preprocessors
-# such as SCSS you can just use the extension css, even
-# though the actual filename is .scss, and Leafcutter will
-# figure it out.
-#
-# Paths are relative to this file, and should not have a
-# leading slash.
-# 
-# The key "theme" denotes a "category" that this CSS will
-# be placed in. Categories might be used as CSS media
-# queries, such as "screen" or "print", but are also a
-# way of controlling load order and segmenting merged files
-# in a rational way.
-#
-# The categories that might be reasonable to use here, in
-# the order they are loaded are:
-# * library: extremely stable and widely-reused code like third-party libraries, will not be inlined
-# * blocking: high load order, highest priority for inlining
-# * theme: theme-specific code
-# * all: generic location
-# * screen: loaded with media="screen" directive
-# * print: loaded with a media="print" directive
-# * speech: loaded with a media="speech" directive
-# * site: site- or section-specific code
-css:
-  theme:
-    - theme/theme.css
+# as a built-in library, this should be overrideable by everything
+priority: -1
 
-# Add all the JS files to be included automatically here.
-# The concept is extremely similar to the css section, and
-# the categories that might be appropriate to use here are:
-# * library: loads first, intended for things that are very stable, generally third-party libs
-# * theme: loads after library, intended to give a section before "site" for themes
-# * all: generic location
-# * site: code that is highly specific to this site
-js:
-  theme:
-    - theme/theme.js
-
-# Add any other theme packages your theme depends on here
-# Some useful packages that are available in a default
-# installation are:
-# * jquery
-# * jquery-ui (includes theme-variable-respecting theme CSS)
-# * fontawesome (only includes CSS/fonts, no JS)
-# * vue
-require: []
-
-# Add any optional theme packages your theme provides here
-# Each one should have a key for its name, and contain any
-# necessary requires, css, or js keys, which would be
-# structured the same way as the root of this file.
-# 
-# For example:
-#
-# packages:
-#   my-package:
-#     requires: [jquery]
-#     css: [my-package.css]
-packages: []
+packages:
+  library/hljs:
+    require:
+      - library/hljs/js
+      - library/hljs/css
+  library/hljs/js:
+    js:
+      theme:
+        - highlight.min.js
+  library/hljs/css:
+    require:
+      - library/hljs/theme-leafcutter
+  library/hljs/theme-leafcutter:
+    css:
+      theme: 
+        - styles/leafcutter.scss
+  library/hljs/theme-a11y-dark:
+    css:
+      theme:
+        - styles/a11y-dark.css
+  library/hljs/theme-a11y-light:
+    css:
+      theme:
+        - styles/a11y-light.css
+  library/hljs/theme-agate:
+    css:
+      theme:
+        - styles/agate.css
+  library/hljs/theme-androidstudio:
+    css:
+      theme:
+        - styles/androidstudio.css
+  library/hljs/theme-an-old-hope:
+    css:
+      theme:
+        - styles/an-old-hope.css
+  library/hljs/theme-arduino-light:
+    css:
+      theme:
+        - styles/arduino-light.css
+  library/hljs/theme-arta:
+    css:
+      theme:
+        - styles/arta.css
+  library/hljs/theme-ascetic:
+    css:
+      theme:
+        - styles/ascetic.css
+  library/hljs/theme-atelier-cave-dark:
+    css:
+      theme:
+        - styles/atelier-cave-dark.css
+  library/hljs/theme-atelier-cave-light:
+    css:
+      theme:
+        - styles/atelier-cave-light.css
+  library/hljs/theme-atelier-dune-dark:
+    css:
+      theme:
+        - styles/atelier-dune-dark.css
+  library/hljs/theme-atelier-dune-light:
+    css:
+      theme:
+        - styles/atelier-dune-light.css
+  library/hljs/theme-atelier-estuary-dark:
+    css:
+      theme:
+        - styles/atelier-estuary-dark.css
+  library/hljs/theme-atelier-estuary-light:
+    css:
+      theme:
+        - styles/atelier-estuary-light.css
+  library/hljs/theme-atelier-forest-dark:
+    css:
+      theme:
+        - styles/atelier-forest-dark.css
+  library/hljs/theme-atelier-forest-light:
+    css:
+      theme:
+        - styles/atelier-forest-light.css
+  library/hljs/theme-atelier-heath-dark:
+    css:
+      theme:
+        - styles/atelier-heath-dark.css
+  library/hljs/theme-atelier-heath-light:
+    css:
+      theme:
+        - styles/atelier-heath-light.css
+  library/hljs/theme-atelier-lakeside-dark:
+    css:
+      theme:
+        - styles/atelier-lakeside-dark.css
+  library/hljs/theme-atelier-lakeside-light:
+    css:
+      theme:
+        - styles/atelier-lakeside-light.css
+  library/hljs/theme-atelier-plateau-dark:
+    css:
+      theme:
+        - styles/atelier-plateau-dark.css
+  library/hljs/theme-atelier-plateau-light:
+    css:
+      theme:
+        - styles/atelier-plateau-light.css
+  library/hljs/theme-atelier-savanna-dark:
+    css:
+      theme:
+        - styles/atelier-savanna-dark.css
+  library/hljs/theme-atelier-savanna-light:
+    css:
+      theme:
+        - styles/atelier-savanna-light.css
+  library/hljs/theme-atelier-seaside-dark:
+    css:
+      theme:
+        - styles/atelier-seaside-dark.css
+  library/hljs/theme-atelier-seaside-light:
+    css:
+      theme:
+        - styles/atelier-seaside-light.css
+  library/hljs/theme-atelier-sulphurpool-dark:
+    css:
+      theme:
+        - styles/atelier-sulphurpool-dark.css
+  library/hljs/theme-atelier-sulphurpool-light:
+    css:
+      theme:
+        - styles/atelier-sulphurpool-light.css
+  library/hljs/theme-atom-one-dark:
+    css:
+      theme:
+        - styles/atom-one-dark.css
+  library/hljs/theme-atom-one-dark-reasonable:
+    css:
+      theme:
+        - styles/atom-one-dark-reasonable.css
+  library/hljs/theme-atom-one-light:
+    css:
+      theme:
+        - styles/atom-one-light.css
+  library/hljs/theme-brown-paper:
+    css:
+      theme:
+        - styles/brown-paper.css
+  library/hljs/theme-codepen-embed:
+    css:
+      theme:
+        - styles/codepen-embed.css
+  library/hljs/theme-color-brewer:
+    css:
+      theme:
+        - styles/color-brewer.css
+  library/hljs/theme-darcula:
+    css:
+      theme:
+        - styles/darcula.css
+  library/hljs/theme-dark:
+    css:
+      theme:
+        - styles/dark.css
+  library/hljs/theme-default:
+    css:
+      theme:
+        - styles/default.css
+  library/hljs/theme-docco:
+    css:
+      theme:
+        - styles/docco.css
+  library/hljs/theme-dracula:
+    css:
+      theme:
+        - styles/dracula.css
+  library/hljs/theme-far:
+    css:
+      theme:
+        - styles/far.css
+  library/hljs/theme-foundation:
+    css:
+      theme:
+        - styles/foundation.css
+  library/hljs/theme-github:
+    css:
+      theme:
+        - styles/github.css
+  library/hljs/theme-github-gist:
+    css:
+      theme:
+        - styles/github-gist.css
+  library/hljs/theme-gml:
+    css:
+      theme:
+        - styles/gml.css
+  library/hljs/theme-googlecode:
+    css:
+      theme:
+        - styles/googlecode.css
+  library/hljs/theme-gradient-dark:
+    css:
+      theme:
+        - styles/gradient-dark.css
+  library/hljs/theme-grayscale:
+    css:
+      theme:
+        - styles/grayscale.css
+  library/hljs/theme-gruvbox-dark:
+    css:
+      theme:
+        - styles/gruvbox-dark.css
+  library/hljs/theme-gruvbox-light:
+    css:
+      theme:
+        - styles/gruvbox-light.css
+  library/hljs/theme-hopscotch:
+    css:
+      theme:
+        - styles/hopscotch.css
+  library/hljs/theme-hybrid:
+    css:
+      theme:
+        - styles/hybrid.css
+  library/hljs/theme-idea:
+    css:
+      theme:
+        - styles/idea.css
+  library/hljs/theme-ir-black:
+    css:
+      theme:
+        - styles/ir-black.css
+  library/hljs/theme-isbl-editor-dark:
+    css:
+      theme:
+        - styles/isbl-editor-dark.css
+  library/hljs/theme-isbl-editor-light:
+    css:
+      theme:
+        - styles/isbl-editor-light.css
+  library/hljs/theme-kimbie.dark:
+    css:
+      theme:
+        - styles/kimbie.dark.css
+  library/hljs/theme-kimbie.light:
+    css:
+      theme:
+        - styles/kimbie.light.css
+  library/hljs/theme-lightfair:
+    css:
+      theme:
+        - styles/lightfair.css
+  library/hljs/theme-magula:
+    css:
+      theme:
+        - styles/magula.css
+  library/hljs/theme-mono-blue:
+    css:
+      theme:
+        - styles/mono-blue.css
+  library/hljs/theme-monokai:
+    css:
+      theme:
+        - styles/monokai.css
+  library/hljs/theme-monokai-sublime:
+    css:
+      theme:
+        - styles/monokai-sublime.css
+  library/hljs/theme-night-owl:
+    css:
+      theme:
+        - styles/night-owl.css
+  library/hljs/theme-nord:
+    css:
+      theme:
+        - styles/nord.css
+  library/hljs/theme-obsidian:
+    css:
+      theme:
+        - styles/obsidian.css
+  library/hljs/theme-ocean:
+    css:
+      theme:
+        - styles/ocean.css
+  library/hljs/theme-paraiso-dark:
+    css:
+      theme:
+        - styles/paraiso-dark.css
+  library/hljs/theme-paraiso-light:
+    css:
+      theme:
+        - styles/paraiso-light.css
+  library/hljs/theme-pojoaque:
+    css:
+      theme:
+        - styles/pojoaque.css
+  library/hljs/theme-purebasic:
+    css:
+      theme:
+        - styles/purebasic.css
+  library/hljs/theme-qtcreator_dark:
+    css:
+      theme:
+        - styles/qtcreator_dark.css
+  library/hljs/theme-qtcreator_light:
+    css:
+      theme:
+        - styles/qtcreator_light.css
+  library/hljs/theme-railscasts:
+    css:
+      theme:
+        - styles/railscasts.css
+  library/hljs/theme-rainbow:
+    css:
+      theme:
+        - styles/rainbow.css
+  library/hljs/theme-routeros:
+    css:
+      theme:
+        - styles/routeros.css
+  library/hljs/theme-school-book:
+    css:
+      theme:
+        - styles/school-book.css
+  library/hljs/theme-shades-of-purple:
+    css:
+      theme:
+        - styles/shades-of-purple.css
+  library/hljs/theme-solarized-dark:
+    css:
+      theme:
+        - styles/solarized-dark.css
+  library/hljs/theme-solarized-light:
+    css:
+      theme:
+        - styles/solarized-light.css
+  library/hljs/theme-srcery:
+    css:
+      theme:
+        - styles/srcery.css
+  library/hljs/theme-sunburst:
+    css:
+      theme:
+        - styles/sunburst.css
+  library/hljs/theme-tomorrow:
+    css:
+      theme:
+        - styles/tomorrow.css
+  library/hljs/theme-tomorrow-night:
+    css:
+      theme:
+        - styles/tomorrow-night.css
+  library/hljs/theme-tomorrow-night-blue:
+    css:
+      theme:
+        - styles/tomorrow-night-blue.css
+  library/hljs/theme-tomorrow-night-bright:
+    css:
+      theme:
+        - styles/tomorrow-night-bright.css
+  library/hljs/theme-tomorrow-night-eighties:
+    css:
+      theme:
+        - styles/tomorrow-night-eighties.css
+  library/hljs/theme-vs:
+    css:
+      theme:
+        - styles/vs.css
+  library/hljs/theme-vs2015:
+    css:
+      theme:
+        - styles/vs2015.css
+  library/hljs/theme-xcode:
+    css:
+      theme:
+        - styles/xcode.css
+  library/hljs/theme-xt256:
+    css:
+      theme:
+        - styles/xt256.css
+  library/hljs/theme-zenburn:
+    css:
+      theme:
+        - styles/zenburn.css

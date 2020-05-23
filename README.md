@@ -1,27 +1,115 @@
-# Leafcutter theming guide
+# highlight.js theme bundle
 
-## Beginning a new theme
+This theme provides the javascript and CSS to use highlight.js. The packages it provides are.
 
-### Creating a one-off theme
+## `library/hljs`
 
-If you're just making a one-off theme for a single site, you can start by creating a folder inside your site's `themes` directory, named whatever you'd like your theme to be called.
+highlight.js and a CSS theme
 
-If you'd like to make your theme in a way that allows it to be distributed via Composer, you can follow the next step instead. If not, skip directly to "The `theme.yaml` file"
+## `library/hljs/js`
 
-### Creating a Composer theme
+highlight.js without a theme
 
-Navigate to where you would like to start your new project, and run a command like `composer create-project leafcutter/theme-template my-theme-name --remove-vcs` where `my-theme-name` is what you'd like your theme to be called.
+## `library/hljs/css`
 
-#### The `composer.json` file
+just the CSS theme portion of hljs, in its own package to allow customization
 
-Edit the `name`, `description`, `license`, and `authors` fields as you see fit. `type` must remain `leafcutter-theme` for sites using the theme to have it automatically registered.
+## `library/hljs/theme-leafcutter`
 
-## The `theme.yaml` file
+An hljs theme that uses Leafcutter's theme variables and mixins to integrate well with most themes
 
-`theme.yaml` holds all the configuration for your theme, mainly which CSS and JS files should be loaded by it, and what optional packages it provides -- if any. The `theme.yaml` in this repository includes basic instructions that cover the bare minimum use cases.
+## `library/hljs/theme-<name>`
 
-## Theme assets
+There are also packages for any of the built-in hljs themes, simply replace <name> with any of the following to use a standard hljs theme.
 
-You can organize the JS, CSS, and other linked files of your theme however you see fit. Just make sure to use relative URLs whenever referencing anything in CSS, and Leafcutter will automatically resolve them for you and assemble everything so that it works at runtime.
-
-Referencing linked files from JS isn't currently possible, but it is on the horizon as a possibility. There are some structural decisions that need to be made about how exactly that will work.
+* a11y-dark
+* a11y-light
+* agate
+* androidstudio
+* an-old-hope
+* arduino-light
+* arta
+* ascetic
+* atelier-cave-dark
+* atelier-cave-light
+* atelier-dune-dark
+* atelier-dune-light
+* atelier-estuary-dark
+* atelier-estuary-light
+* atelier-forest-dark
+* atelier-forest-light
+* atelier-heath-dark
+* atelier-heath-light
+* atelier-lakeside-dark
+* atelier-lakeside-light
+* atelier-plateau-dark
+* atelier-plateau-light
+* atelier-savanna-dark
+* atelier-savanna-light
+* atelier-seaside-dark
+* atelier-seaside-light
+* atelier-sulphurpool-dark
+* atelier-sulphurpool-light
+* atom-one-dark
+* atom-one-dark-reasonable
+* atom-one-light
+* brown-paper
+* codepen-embed
+* color-brewer
+* darcula
+* dark
+* default
+* docco
+* dracula
+* far
+* foundation
+* github
+* github-gist
+* gml
+* googlecode
+* gradient-dark
+* grayscale
+* gruvbox-dark
+* gruvbox-light
+* hopscotch
+* hybrid
+* idea
+* ir-black
+* isbl-editor-dark
+* isbl-editor-light
+* kimbie.dark
+* kimbie.light
+* lightfair
+* magula
+* mono-blue
+* monokai
+* monokai-sublime
+* night-owl
+* nord
+* obsidian
+* ocean
+* paraiso-dark
+* paraiso-light
+* pojoaque
+* purebasic
+* qtcreator_dark
+* qtcreator_light
+* railscasts
+* rainbow
+* routeros
+* school-book
+* shades-of-purple
+* solarized-dark
+* solarized-light
+* srcery
+* sunburst
+* tomorrow
+* tomorrow-night
+* tomorrow-night-blue
+* tomorrow-night-bright
+* tomorrow-night-eighties
+* vs
+* vs2015
+* xcode
+* xt256
+* zenburn
