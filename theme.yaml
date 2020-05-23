@@ -16,7 +16,7 @@ packages:
   library/hljs/theme-leafcutter:
     css:
       theme: 
-        - styles/leafcutter.scss
+        - styles-leafcutter.scss
   library/hljs/theme-a11y-dark:
     css:
       theme:
